@@ -3,10 +3,14 @@ import itertools
 import json
 import os
 
+# expects json array of integers
 DEPTHS = json.load(open(os.path.join('data', 'day_1.json')))
 
 
 def part_1():
+    """
+    Calculate how many depth readings show an increase when compared to the previous in the list DEPTHS
+    """
     current_depth = None
     increases = 0
 
@@ -27,6 +31,9 @@ def part_1():
 
 
 def sliding_window(iterable, n):
+    """
+    yield the sum of the sliding window of 3 depths from the list DEPTHS
+    """
     window = collections.deque(itertools.islice(iterable, n), maxlen=n)
 
     if len(window) == n:
@@ -38,6 +45,9 @@ def sliding_window(iterable, n):
 
 
 def part_2():
+    """
+    Calculate the number of window sums that show an increase when compared to the previous
+    """
     current_sum = None
     increases = 0
 
