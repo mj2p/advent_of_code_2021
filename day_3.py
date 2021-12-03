@@ -89,7 +89,7 @@ def part_2(diagnostics):
 
 
 if __name__ == "__main__":
-    # expects json array of integers
+    # expects json array of strings
     diagnostic_data = json.load(open(os.path.join("data", "day_3.json")))
 
     part_1_final = part_1(diagnostic_data)
